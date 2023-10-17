@@ -32,15 +32,16 @@ const SignUp = () => {
     if ((Logs.email === true)) {
       setShos(true);
       localStorage.setItem('token', Logs.token)
-      const timerId = setTimeout(() => {
-        navigate("/SignIn");
-        Logs.email = "";
-      }, 2000);
+      if ((Logs.email === true)) {
+        const timerId = setTimeout(() => {
+          navigate("/SignIn");
+          Logs.email = "";
+        }, 2000);
 
-      return () => clearTimeout(timerId);
-
+        return () => clearTimeout(timerId);
+      }
     }
-  }, [Logs, navigate]);
+  }, [Logs, navigate, Logs.email]);
   let SignUp = async (e) => {
     if (username.current.value.trim() !== '' || Email.current.value.trim() !== '' || password.current.value.trim() !== '') {
       if (username.current.value.trim() === "") {
