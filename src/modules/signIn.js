@@ -52,7 +52,7 @@ const SignIn = () => {
       }
 
     }
-  }, [Logs, navigate]);
+  }, [Logs, navigate, Logs.Email, Logs.pass]);
   let Sign_func = async (e) => {
 
     e.preventDefault();

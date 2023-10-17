@@ -30,7 +30,8 @@ const SignUp = () => {
       email_error.current.textContent = '';
     }
     if ((Logs.email === true)) {
-      setDhos(true);
+      setShos(true);
+      localStorage.setItem('token', Logs.token)
       const timerId = setTimeout(() => {
         navigate("/SignIn");
         Logs.email = "";
