@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react'
 import NoteContext from '../context/notes/NoteContext'
 import Noteitem from './NoteitemDesign';
@@ -16,7 +16,7 @@ const AllNotes = (props) => {
     else {
       navigate("/SignIn")
     }
-  }, [])
+  }, [get_Notes, navigate])
 
 
   return (

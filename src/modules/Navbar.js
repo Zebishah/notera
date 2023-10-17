@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../App.css";
-import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import VNavbar from "./VNavbar";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = (props) => {
+const Navbar = () => {
   let [showMenu, setShowMenu] = useState(false)
   let navigate = useNavigate();
-  let [showBar, setShowBar] = useState(false)
-  let [showBtn, setShowBtn] = useState(true)
+  let a = localStorage.getItem('token');
   let [showBtn1, setShowBtn1] = useState(true)
   let [showCount, setShowCount] = useState(0)
   let handle_Logout = () => {
@@ -21,25 +20,9 @@ const Navbar = (props) => {
 
     console.log("logout")
 
-  }, [localStorage.getItem('token')])
-
-  let openSearch = () => {
-
-    if (showCount === 0) {
-      console.log("c==1");
-      setShowBar(true)
-      setShowCount(2);
-      setShowBtn(false)
-    }
-    if (showCount === 2) {
-      console.log("c==2");
-      setShowBar(false)
-      setShowCount(0);
-      setShowBtn(true)
-    }
+  }, [a])
 
 
-  }
   let openMenu = () => {
 
     if (showCount === 0) {

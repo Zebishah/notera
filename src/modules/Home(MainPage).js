@@ -1,6 +1,5 @@
-import { React, useState, useRef } from 'react'
+import { React } from 'react'
 import AddNote from './AddNotePanel'
-import AllNotes from './ShowingAllNotes'
 import Navbar from './Navbar'
 
 const Home = (props) => {

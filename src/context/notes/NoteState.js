@@ -5,7 +5,6 @@ let NoteState = (props) => {
   let notes = [];
 
   let [note, setNotes] = useState(notes);
-  let [s, ss] = useState(null)
 
   let get_Notes = async () => {
     const response = await fetch(`${host}/api/notes/fetchNote`, {
@@ -46,7 +45,7 @@ let NoteState = (props) => {
 
     });
     const data = response.json();
-
+    console.log(data)
 
 
     let new_Notes = note.filter((note) => {
@@ -73,7 +72,7 @@ let NoteState = (props) => {
 
     console.log("title" + title)
     const data = await response.json();
-
+    console.log(data)
 
 
 

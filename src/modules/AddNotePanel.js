@@ -10,7 +10,7 @@ const AddNote = (props) => {
   //Adding new note in database as well as in screen
   const notes = useContext(NoteContext);
 
-  let [s, sss] = useState(false)
+
   let [shos, setShos] = useState(false)
   let { note, add_Note } = notes;
   let count = 0;
@@ -27,16 +27,6 @@ const AddNote = (props) => {
   let tit_error = useRef(null);
   let Descriptions = useRef(null);
   let tagss = useRef(null);
-  const [showAlert, setShowAlert] = useState(false);
-
-  const showAlertForDuration = () => {
-    setShowAlert(true);
-
-    // Hide the alert after 3 seconds
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 3000); // 3000 milliseconds (3 seconds)
-  };
   let update_Note = (card) => {
     ss(true);
     setKey(card.keys);
@@ -95,8 +85,8 @@ const AddNote = (props) => {
           Descriptions.current.value = ""
           tagss.current.value = ""
 
-          showAlertForDuration();
-          add_Note(key, not.title, not.Description, not.tags, s);
+
+          add_Note(key, not.title, not.Description, not.tags);
         }
         else {
 

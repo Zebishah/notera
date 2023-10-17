@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LogContext from "./LogContext";
 
 const LogContexts = (props) => {
@@ -81,7 +81,7 @@ const LogContexts = (props) => {
 
     return (
 
-        <LogContext.Provider value={{ sign_up, sign_in, fetchLogs, email, pass, token }}>
+        <LogContext.Provider value={{ sign_up, sign_in, fetchLogs, email, pass, token, Users }}>
             {props.children}
         </LogContext.Provider>
     )
