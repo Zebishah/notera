@@ -1,7 +1,9 @@
 import { useState } from "react";
 import NoteContext from "./NoteContext";
+
 let NoteState = (props) => {
-  let host = "http://localhost:5000";
+  let host = process.env.REACT_APP_API_HOST;
+
   let notes = [];
 
   let [note, setNotes] = useState(notes);

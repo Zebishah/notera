@@ -1,6 +1,7 @@
+require('dotenv').config();
 var jwt = require("jsonwebtoken");
 
-let jwt_secret = "your-Brother-Zebi";
+const jwt_secret = process.env.JWT_SECRET;
 
 let fetchUser = (req, res, next) => {
     try {

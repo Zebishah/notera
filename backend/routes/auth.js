@@ -1,10 +1,12 @@
+require('dotenv').config();
 const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
 const { validationResult, body } = require("express-validator");
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
-let jwt_secret = "your-Brother-Zebi";
+// Access environment variables
+const jwt_secret = process.env.JWT_SECRET;
 let success = null;
 
 router.post(
