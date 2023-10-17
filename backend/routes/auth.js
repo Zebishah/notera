@@ -1,12 +1,12 @@
 const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
-const { query, validationResult, body } = require("express-validator");
+const { validationResult, body } = require("express-validator");
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 let jwt_secret = "your-Brother-Zebi";
 let success = null;
-let e_success = true;
+
 router.post(
       "/signUp",
       [
@@ -77,7 +77,7 @@ router.post(
                   try {
                         let success = null;
                         let p_success = null;
-                        let e_success = null;
+
                         let { Email, Password } = req.body;
                         let user = await User.findOne({ Email: Email });
 

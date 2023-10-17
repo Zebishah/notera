@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   let [showMenu, setShowMenu] = useState(false)
   let navigate = useNavigate();
-  let a = localStorage.getItem('token');
+
   let [showBtn1, setShowBtn1] = useState(true)
   let [showCount, setShowCount] = useState(0)
   let handle_Logout = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
 
     console.log("logout")
 
-  }, [a])
+  }, [])
 
 
   let openMenu = () => {
