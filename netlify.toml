@@ -1,0 +1,12 @@
+[build]
+  base = "/" 
+  publish = "/build" 
+
+[build.environment]
+  NODE_VERSION = "18" # Specify the Node.js version
+
+[[redirects]]
+  from = "/*"
+  to = "/public/index.html"
+  status = 200
+
