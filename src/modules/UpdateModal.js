@@ -66,11 +66,9 @@ const UpdateModal = (props) => {
 
 
           update_Note(keys, editedTitle, editedDescription, editedTags)
-          const timerId = setTimeout(() => {
-            close_Modal();
-          }, 2000);
 
-          return () => clearTimeout(timerId);
+          close_Modal();
+
 
 
         }
