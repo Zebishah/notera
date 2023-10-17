@@ -1,11 +1,15 @@
+require('dotenv').config(); // Load environment variables from .env
+
 const mongoose = require('mongoose');
-const mongo_URI = "mongodb+srv://zebihaider:itachi18030@cluster0.mthkcqh.mongodb.net/inotebook";
+const mongo_URI = process.env.MONGOURI;
 
 const connectDB = async () => {
-    await mongoose.connect(mongo_URI).then((result) => {
+    try {
+        await mongoose.connect(mongo_URI);
         console.log("Database is connected on Connection String " + mongo_URI);
-    }).catch((err) => {
-        console.log("Database is not connected we got an error  " + err);
-    });
+    } catch (err) {
+        console.log("Database is not connected, we got an error: " + err);
+    }
 }
-module.exports = connectDB
+
+module.exports = connectDB;
