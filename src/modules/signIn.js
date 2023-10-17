@@ -1,9 +1,9 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import Navbar from './Navbar';
 import LogContext from '../context/notes/LogContext';
-import Sign_in_alert from './Sign_Inalert';
+import SignInAlert from './Sign_Inalert';
 import { Link, useNavigate } from 'react-router-dom';
-import Wrong_Alert from './Wrong_Alert';
+import WrongAlert from './Wrong_Alert';
 
 const SignIn = () => {
   let [logs, setLogs] = useState(null);
@@ -52,7 +52,7 @@ const SignIn = () => {
       }
 
     }
-  }, [Logs.email, Logs.pass]);
+  }, [Logs, navigate]);
   let Sign_func = async (e) => {
 
     e.preventDefault();
@@ -94,7 +94,7 @@ const SignIn = () => {
   return (
     <div className='overflow-hidden flex flex-col'>
       <Navbar />
-      <Wrong_Alert dhos={dhos} />
+      <WrongAlert dhos={dhos} />
       {
         useEffect(() => {
           if (dhos) {
@@ -107,7 +107,7 @@ const SignIn = () => {
 
         }, [dhos])
       }
-      <Sign_in_alert shos={shos} />
+      <SignInAlert shos={shos} />
       {
         useEffect(() => {
           if (shos) {

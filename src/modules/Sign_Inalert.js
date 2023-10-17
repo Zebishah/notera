@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Sign_Inalert(props) {
+function SignInAlert(props) {
     return (
         <div>
             <div className={`flex justify-center items-center w-[100%] h-12  bg-green-400 text-green-950 relative -top-[20rem] -translate-x-full ${props.shos && "translate-x-0"} transition-all duration-500 delay-200 ease-in-out`}>
@@ -11,4 +11,4 @@ function Sign_Inalert(props) {
     )
 }
 
-export default Sign_Inalert;
+export default SignInAlert;

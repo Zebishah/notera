@@ -1,13 +1,13 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import Navbar from './Navbar';
 import LogContext from '../context/notes/LogContext';
-import Signup_Alert from './Signup_Alert';
-import Wrong_Alert from './Wrong_Alert';
+import SignUpAlert from './Signup_Alert';
+import WrongAlert from './Wrong_Alert';
 import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
   let [logs, setLogs] = useState(null);
   const Logs = useContext(LogContext);
-  let { sign_up, fetchLogs, Users, email } = Logs;
+  let { sign_up } = Logs;
   const navigate = useNavigate();
   let username = useRef(null);
   let email_error = useRef(null);
@@ -20,7 +20,6 @@ const SignUp = () => {
   let [shos, setShos] = useState(false)
   let [dhos, setDhos] = useState(false)
   let Email = useRef(null);
-  let count = 0;
   useEffect(() => {
 
     // This effect will run whenever email or pass change in the context
@@ -40,7 +39,7 @@ const SignUp = () => {
       return () => clearTimeout(timerId);
 
     }
-  }, [Logs.email, Logs.pass]);
+  }, [Logs, navigate]);
   let SignUp = async (e) => {
     if (username.current.value.trim() !== '' || Email.current.value.trim() !== '' || password.current.value.trim() !== '') {
       if (username.current.value.trim() === "") {
@@ -106,7 +105,7 @@ const SignUp = () => {
   return (
     <div className='flex flex-col overflow-x-hidden'>
       <Navbar />
-      <Wrong_Alert dhos={dhos} />
+      <WrongAlert dhos={dhos} />
       {
         useEffect(() => {
           if (dhos) {
@@ -119,7 +118,7 @@ const SignUp = () => {
 
         }, [dhos])
       }
-      <Signup_Alert shos={shos} />
+      <SignUpAlert shos={shos} />
       {
         useEffect(() => {
           if (shos) {

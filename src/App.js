@@ -2,7 +2,7 @@ import './App.css';
 import NoteState from './context/notes/NoteState';
 import About from './modules/About';
 import Home from './modules/Home(MainPage)';
-import Navbar from './modules/Navbar';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from './modules/signIn';
 import SignUp from './modules/signUp';
