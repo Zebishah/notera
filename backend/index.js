@@ -3,11 +3,7 @@ const express = require('express');
 require('dotenv').config();
 const app = express();
 var cors = require('cors')
-app.use(cors({
-    origin: [""],
-    methods: ["POST", "GET"],
-    credentials: true
-}))
+app.use(cors())
 app.use(express.json())
 const port = 5000;
 connectDB();
