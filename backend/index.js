@@ -3,7 +3,11 @@ const express = require('express');
 require('dotenv').config();
 const app = express();
 var cors = require('cors')
-app.use(cors())
+app.use(cors({
+    origin: ["https://notera-omega.vercel.app/SignIn"],
+    methods: ["POST", "GET"],
+    credentials: true
+}))
 app.use(express.json())
 const port = 5000;
 connectDB();
