@@ -4,7 +4,7 @@ require('dotenv').config();
 const app = express();
 var cors = require('cors')
 app.use(cors({
-    origin: ["https://notera-omega.vercel.app/SignIn"],
+    origin: [""],
     methods: ["POST", "GET"],
     credentials: true
 }))
