@@ -9,4 +9,26 @@
   from = "/*"
   to = "/public/index.html"
   status = 200
+[build]
+  command = "npm run build"
+  publish = "build"
 
+[context.production.environment]
+  MONGOURI = "mongodb+srv://zebihaider:itachi18030@cluster0.mthkcqh.mongodb.net/inotebook"
+  REACT_APP_API_HOST = "http://localhost:5000"  # Update this to the actual API URL
+  JWT_SECRET = "your-secret-key"
+
+[context.deploy-preview.environment]
+  MONGOURI = "mongodb+srv://zebihaider:itachi18030@cluster0.mthkcqh.mongodb.net/inotebook"
+  REACT_APP_API_HOST = "http://localhost:5000"  # Update this to the actual API URL
+  JWT_SECRET = "your"
+
+[context.branch-deploy.environment]
+  MONGOURI = "mongodb+srv://zebihaider:itachi18030@cluster0.mthkcqh.mongodb.net/inotebook"
+  REACT_APP_API_HOST = "http://localhost:5000"  # Update this to the actual API URL
+  JWT_SECRET = "your"
+
+[context.split-branch-deploy.environment]
+  MONGOURI = "mongodb+srv://zebihaider:itachi18030@cluster0.mthkcqh.mongodb.net/inotebook"
+  REACT_APP_API_HOST = "http://localhost:5000"  # Update this to the actual API URL
+  JWT_SECRET = "your"
